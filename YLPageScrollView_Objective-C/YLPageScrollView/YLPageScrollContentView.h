@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class YLPageScrollViewAppreance;
+
 @interface YLPageScrollContentView : UICollectionView
+
++ (instancetype)pageScrollContentViewWithFrame:(CGRect)frame childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC appreance:(YLPageScrollViewAppreance *)appreance;
 
 @end

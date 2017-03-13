@@ -7,15 +7,24 @@
 //
 
 #import "YLPageScrollTitleView.h"
+#import "YLPageScrollViewConfigure.h"
 
 @implementation YLPageScrollTitleView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)pageScrollTitleViewWithFrame:(CGRect)frame titles:(NSArray *)titles appreance:(YLPageScrollViewAppreance *)appreance
+{
+    return [[self alloc] initWithFrame:frame titles:titles appreance:appreance];
 }
-*/
+
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles appreance:(YLPageScrollViewAppreance *)appreance
+{
+    
+    if (self = [super initWithFrame:frame]) {
+        
+        self.backgroundColor = YLPageScrollViewRandomColor;
+        
+    }
+    return self;
+}
 
 @end

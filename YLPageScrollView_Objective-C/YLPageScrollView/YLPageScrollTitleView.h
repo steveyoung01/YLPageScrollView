@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class YLPageScrollViewAppreance;
+
 @interface YLPageScrollTitleView : UIScrollView
+
++ (instancetype)pageScrollTitleViewWithFrame:(CGRect)frame titles:(NSArray *)titles appreance:(YLPageScrollViewAppreance *)appreance;
 
 @end

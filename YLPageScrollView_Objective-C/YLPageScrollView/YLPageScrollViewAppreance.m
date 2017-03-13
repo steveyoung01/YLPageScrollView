@@ -7,6 +7,7 @@
 //
 
 #import "YLPageScrollViewAppreance.h"
+#import "YLPageScrollViewConfigure.h"
 
 @implementation YLPageScrollViewAppreance
 - (instancetype)init
@@ -27,8 +28,8 @@
     self.botomLineHeight = 3;
     self.maxScaleRatio = 1.2;
     
-    self.titleNormalColor = RGB(200, 200, 200);
-    self.titleSelectedColor = RGB(50, 50, 50);
+    self.titleNormalColor = YLPageScrollViewRGB(200, 200, 200);
+    self.titleSelectedColor = YLPageScrollViewRGB(50, 50, 50);
     self.bottomLineColor = self.titleSelectedColor;
     
     self.isScrollEnable = NO;
