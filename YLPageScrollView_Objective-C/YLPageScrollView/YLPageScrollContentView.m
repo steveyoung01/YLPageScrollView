@@ -8,8 +8,9 @@
 
 #import "YLPageScrollContentView.h"
 #import "YLPageScrollViewConfigure.h"
+#import "YLPageScrollTitleView.h"
 
-@interface YLPageScrollContentView ()
+@interface YLPageScrollContentView () <YLPageScrollTitleViewDelegate>
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @end
 
@@ -30,6 +31,12 @@
         
     }
     return self;
+}
+
+#pragma mark - YLPageScrollTitleViewDelegate
+- (void)pageScrollTitleViewDidSelected:(YLPageScrollTitleView *)titleView selectedIndex:(NSInteger)selectedIndex
+{
+    NSLog(@"%@----%ld", titleView, selectedIndex);
 }
 
 #pragma mark - 懒加载

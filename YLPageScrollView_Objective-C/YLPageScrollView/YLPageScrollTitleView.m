@@ -89,7 +89,9 @@
     }
     [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
     
-    
+    if ([self.delegate_ respondsToSelector:@selector(pageScrollTitleViewDidSelected:selectedIndex:)]) {
+        [self.delegate_ pageScrollTitleViewDidSelected:self selectedIndex:self.selectedIndex];
+    }
 }
 
 
