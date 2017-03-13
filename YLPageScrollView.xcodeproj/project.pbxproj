@@ -22,6 +22,10 @@
 		7FFC440E1E76304D00BED0ED /* YLPageScrollTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */; };
 		7FFC440F1E76304D00BED0ED /* YLPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */; };
 		7FFC44101E76304D00BED0ED /* YLPageScrollViewAppreance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */; };
+		7FFC44141E76316D00BED0ED /* YLPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44131E76316D00BED0ED /* YLPageScrollView.m */; };
+		7FFC44171E76319400BED0ED /* YLPageScrollTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44161E76319400BED0ED /* YLPageScrollTitleView.m */; };
+		7FFC441A1E7631A900BED0ED /* YLPageScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */; };
+		7FFC441D1E7631C600BED0ED /* YLPageScrollViewAppreance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,14 @@
 		7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollTitleView.swift; sourceTree = "<group>"; };
 		7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollView.swift; sourceTree = "<group>"; };
 		7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollViewAppreance.swift; sourceTree = "<group>"; };
+		7FFC44121E76316D00BED0ED /* YLPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPageScrollView.h; sourceTree = "<group>"; };
+		7FFC44131E76316D00BED0ED /* YLPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollView.m; sourceTree = "<group>"; };
+		7FFC44151E76319400BED0ED /* YLPageScrollTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPageScrollTitleView.h; sourceTree = "<group>"; };
+		7FFC44161E76319400BED0ED /* YLPageScrollTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollTitleView.m; sourceTree = "<group>"; };
+		7FFC44181E7631A900BED0ED /* YLPageScrollContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPageScrollContentView.h; sourceTree = "<group>"; };
+		7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollContentView.m; sourceTree = "<group>"; };
+		7FFC441B1E7631C600BED0ED /* YLPageScrollViewAppreance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPageScrollViewAppreance.h; sourceTree = "<group>"; };
+		7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollViewAppreance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +113,11 @@
 		7FFC43F21E76302000BED0ED /* YLPageScrollView_Objective-C */ = {
 			isa = PBXGroup;
 			children = (
+				7FFC44111E76315A00BED0ED /* YLPageScrollView */,
 				7FFC43F61E76302000BED0ED /* AppDelegate.h */,
 				7FFC43F71E76302000BED0ED /* AppDelegate.m */,
 				7FFC43F91E76302000BED0ED /* ViewController.h */,
 				7FFC43FA1E76302000BED0ED /* ViewController.m */,
-				7FFC43FC1E76302000BED0ED /* Main.storyboard */,
-				7FFC43FF1E76302000BED0ED /* Assets.xcassets */,
-				7FFC44011E76302000BED0ED /* LaunchScreen.storyboard */,
-				7FFC44041E76302000BED0ED /* Info.plist */,
 				7FFC43F31E76302000BED0ED /* Supporting Files */,
 			);
 			path = "YLPageScrollView_Objective-C";
@@ -117,6 +126,10 @@
 		7FFC43F31E76302000BED0ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FFC43FC1E76302000BED0ED /* Main.storyboard */,
+				7FFC43FF1E76302000BED0ED /* Assets.xcassets */,
+				7FFC44011E76302000BED0ED /* LaunchScreen.storyboard */,
+				7FFC44041E76302000BED0ED /* Info.plist */,
 				7FFC43F41E76302000BED0ED /* main.m */,
 			);
 			name = "Supporting Files";
@@ -129,6 +142,21 @@
 				7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */,
 				7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */,
 				7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */,
+			);
+			path = YLPageScrollView;
+			sourceTree = "<group>";
+		};
+		7FFC44111E76315A00BED0ED /* YLPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				7FFC44121E76316D00BED0ED /* YLPageScrollView.h */,
+				7FFC44131E76316D00BED0ED /* YLPageScrollView.m */,
+				7FFC44151E76319400BED0ED /* YLPageScrollTitleView.h */,
+				7FFC44161E76319400BED0ED /* YLPageScrollTitleView.m */,
+				7FFC44181E7631A900BED0ED /* YLPageScrollContentView.h */,
+				7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */,
+				7FFC441B1E7631C600BED0ED /* YLPageScrollViewAppreance.h */,
+				7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */,
 			);
 			path = YLPageScrollView;
 			sourceTree = "<group>";
@@ -253,8 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFC43FB1E76302000BED0ED /* ViewController.m in Sources */,
+				7FFC44141E76316D00BED0ED /* YLPageScrollView.m in Sources */,
 				7FFC43F81E76302000BED0ED /* AppDelegate.m in Sources */,
 				7FFC43F51E76302000BED0ED /* main.m in Sources */,
+				7FFC44171E76319400BED0ED /* YLPageScrollTitleView.m in Sources */,
+				7FFC441A1E7631A900BED0ED /* YLPageScrollContentView.m in Sources */,
+				7FFC441D1E7631C600BED0ED /* YLPageScrollViewAppreance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
