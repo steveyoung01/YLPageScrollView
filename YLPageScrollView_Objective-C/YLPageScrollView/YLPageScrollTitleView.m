@@ -79,6 +79,16 @@
     
     self.selectedIndex = selectedLabel.tag;
     
+    CGFloat offsetX = selectedLabel.center.x - self.frame.size.width * 0.5;
+    if (offsetX <= 0) {
+        offsetX = 0;
+    }
+    CGFloat maxOffsetX = self.contentSize.width - self.frame.size.width;
+    if (offsetX > maxOffsetX) {
+        offsetX = maxOffsetX;
+    }
+    [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
     
 }
 
