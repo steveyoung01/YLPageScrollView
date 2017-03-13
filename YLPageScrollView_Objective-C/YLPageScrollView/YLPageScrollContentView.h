@@ -21,7 +21,7 @@
 
 @end
 
-@interface YLPageScrollContentView : UICollectionView <YLPageScrollTitleViewDelegate>
+@interface YLPageScrollContentView : UIView <YLPageScrollTitleViewDelegate>
 
 /**
  防止和系统的delegate重名
