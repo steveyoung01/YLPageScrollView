@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>YLPageScrollView_Objective-C.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7FFC43CE1E762F8B00BED0ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FFC43F01E76302000BED0ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>

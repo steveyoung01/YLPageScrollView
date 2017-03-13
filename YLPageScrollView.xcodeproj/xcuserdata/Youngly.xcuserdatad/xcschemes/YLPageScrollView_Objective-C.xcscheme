@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FFC43CE1E762F8B00BED0ED"
-               BuildableName = "YLPageScrollView.app"
-               BlueprintName = "YLPageScrollView"
+               BlueprintIdentifier = "7FFC43F01E76302000BED0ED"
+               BuildableName = "YLPageScrollView_Objective-C.app"
+               BlueprintName = "YLPageScrollView_Objective-C"
                ReferencedContainer = "container:YLPageScrollView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FFC43CE1E762F8B00BED0ED"
-            BuildableName = "YLPageScrollView.app"
-            BlueprintName = "YLPageScrollView"
+            BlueprintIdentifier = "7FFC43F01E76302000BED0ED"
+            BuildableName = "YLPageScrollView_Objective-C.app"
+            BlueprintName = "YLPageScrollView_Objective-C"
             ReferencedContainer = "container:YLPageScrollView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FFC43CE1E762F8B00BED0ED"
-            BuildableName = "YLPageScrollView.app"
-            BlueprintName = "YLPageScrollView"
+            BlueprintIdentifier = "7FFC43F01E76302000BED0ED"
+            BuildableName = "YLPageScrollView_Objective-C.app"
+            BlueprintName = "YLPageScrollView_Objective-C"
             ReferencedContainer = "container:YLPageScrollView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FFC43CE1E762F8B00BED0ED"
-            BuildableName = "YLPageScrollView.app"
-            BlueprintName = "YLPageScrollView"
+            BlueprintIdentifier = "7FFC43F01E76302000BED0ED"
+            BuildableName = "YLPageScrollView_Objective-C.app"
+            BlueprintName = "YLPageScrollView_Objective-C"
             ReferencedContainer = "container:YLPageScrollView.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

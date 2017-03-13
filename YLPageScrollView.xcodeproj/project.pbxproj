@@ -12,6 +12,16 @@
 		7FFC43D81E762F8B00BED0ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC43D61E762F8B00BED0ED /* Main.storyboard */; };
 		7FFC43DA1E762F8B00BED0ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC43D91E762F8B00BED0ED /* Assets.xcassets */; };
 		7FFC43DD1E762F8B00BED0ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC43DB1E762F8B00BED0ED /* LaunchScreen.storyboard */; };
+		7FFC43F51E76302000BED0ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC43F41E76302000BED0ED /* main.m */; };
+		7FFC43F81E76302000BED0ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC43F71E76302000BED0ED /* AppDelegate.m */; };
+		7FFC43FB1E76302000BED0ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC43FA1E76302000BED0ED /* ViewController.m */; };
+		7FFC43FE1E76302000BED0ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC43FC1E76302000BED0ED /* Main.storyboard */; };
+		7FFC44001E76302000BED0ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC43FF1E76302000BED0ED /* Assets.xcassets */; };
+		7FFC44031E76302000BED0ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC44011E76302000BED0ED /* LaunchScreen.storyboard */; };
+		7FFC440D1E76304D00BED0ED /* YLPageScrollContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44091E76304D00BED0ED /* YLPageScrollContentView.swift */; };
+		7FFC440E1E76304D00BED0ED /* YLPageScrollTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */; };
+		7FFC440F1E76304D00BED0ED /* YLPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */; };
+		7FFC44101E76304D00BED0ED /* YLPageScrollViewAppreance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +32,31 @@
 		7FFC43D91E762F8B00BED0ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FFC43DC1E762F8B00BED0ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FFC43DE1E762F8B00BED0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FFC43F11E76302000BED0ED /* YLPageScrollView_Objective-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YLPageScrollView_Objective-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FFC43F41E76302000BED0ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7FFC43F61E76302000BED0ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7FFC43F71E76302000BED0ED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7FFC43F91E76302000BED0ED /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7FFC43FA1E76302000BED0ED /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7FFC43FD1E76302000BED0ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FFC43FF1E76302000BED0ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FFC44021E76302000BED0ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FFC44041E76302000BED0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FFC44091E76304D00BED0ED /* YLPageScrollContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollContentView.swift; sourceTree = "<group>"; };
+		7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollTitleView.swift; sourceTree = "<group>"; };
+		7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollView.swift; sourceTree = "<group>"; };
+		7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLPageScrollViewAppreance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7FFC43CC1E762F8B00BED0ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FFC43EE1E76302000BED0ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFC43D11E762F8B00BED0ED /* YLPageScrollView */,
+				7FFC43F21E76302000BED0ED /* YLPageScrollView_Objective-C */,
 				7FFC43D01E762F8B00BED0ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFC43CF1E762F8B00BED0ED /* YLPageScrollView.app */,
+				7FFC43F11E76302000BED0ED /* YLPageScrollView_Objective-C.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,12 +87,48 @@
 		7FFC43D11E762F8B00BED0ED /* YLPageScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				7FFC44081E76304D00BED0ED /* YLPageScrollView */,
 				7FFC43D21E762F8B00BED0ED /* AppDelegate.swift */,
 				7FFC43D41E762F8B00BED0ED /* ViewController.swift */,
 				7FFC43D61E762F8B00BED0ED /* Main.storyboard */,
 				7FFC43D91E762F8B00BED0ED /* Assets.xcassets */,
 				7FFC43DB1E762F8B00BED0ED /* LaunchScreen.storyboard */,
 				7FFC43DE1E762F8B00BED0ED /* Info.plist */,
+			);
+			path = YLPageScrollView;
+			sourceTree = "<group>";
+		};
+		7FFC43F21E76302000BED0ED /* YLPageScrollView_Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				7FFC43F61E76302000BED0ED /* AppDelegate.h */,
+				7FFC43F71E76302000BED0ED /* AppDelegate.m */,
+				7FFC43F91E76302000BED0ED /* ViewController.h */,
+				7FFC43FA1E76302000BED0ED /* ViewController.m */,
+				7FFC43FC1E76302000BED0ED /* Main.storyboard */,
+				7FFC43FF1E76302000BED0ED /* Assets.xcassets */,
+				7FFC44011E76302000BED0ED /* LaunchScreen.storyboard */,
+				7FFC44041E76302000BED0ED /* Info.plist */,
+				7FFC43F31E76302000BED0ED /* Supporting Files */,
+			);
+			path = "YLPageScrollView_Objective-C";
+			sourceTree = "<group>";
+		};
+		7FFC43F31E76302000BED0ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FFC43F41E76302000BED0ED /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FFC44081E76304D00BED0ED /* YLPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				7FFC44091E76304D00BED0ED /* YLPageScrollContentView.swift */,
+				7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */,
+				7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */,
+				7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */,
 			);
 			path = YLPageScrollView;
 			sourceTree = "<group>";
@@ -84,6 +153,23 @@
 			productReference = 7FFC43CF1E762F8B00BED0ED /* YLPageScrollView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7FFC43F01E76302000BED0ED /* YLPageScrollView_Objective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FFC44051E76302000BED0ED /* Build configuration list for PBXNativeTarget "YLPageScrollView_Objective-C" */;
+			buildPhases = (
+				7FFC43ED1E76302000BED0ED /* Sources */,
+				7FFC43EE1E76302000BED0ED /* Frameworks */,
+				7FFC43EF1E76302000BED0ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YLPageScrollView_Objective-C";
+			productName = "YLPageScrollView_Objective-C";
+			productReference = 7FFC43F11E76302000BED0ED /* YLPageScrollView_Objective-C.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +181,11 @@
 				ORGANIZATIONNAME = YL;
 				TargetAttributes = {
 					7FFC43CE1E762F8B00BED0ED = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = Q6CGREU86U;
+						ProvisioningStyle = Automatic;
+					};
+					7FFC43F01E76302000BED0ED = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = Q6CGREU86U;
 						ProvisioningStyle = Automatic;
@@ -115,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				7FFC43CE1E762F8B00BED0ED /* YLPageScrollView */,
+				7FFC43F01E76302000BED0ED /* YLPageScrollView_Objective-C */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +222,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FFC43EF1E76302000BED0ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FFC44031E76302000BED0ED /* LaunchScreen.storyboard in Resources */,
+				7FFC44001E76302000BED0ED /* Assets.xcassets in Resources */,
+				7FFC43FE1E76302000BED0ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,8 +239,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFC440E1E76304D00BED0ED /* YLPageScrollTitleView.swift in Sources */,
 				7FFC43D51E762F8B00BED0ED /* ViewController.swift in Sources */,
 				7FFC43D31E762F8B00BED0ED /* AppDelegate.swift in Sources */,
+				7FFC440D1E76304D00BED0ED /* YLPageScrollContentView.swift in Sources */,
+				7FFC440F1E76304D00BED0ED /* YLPageScrollView.swift in Sources */,
+				7FFC44101E76304D00BED0ED /* YLPageScrollViewAppreance.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FFC43ED1E76302000BED0ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FFC43FB1E76302000BED0ED /* ViewController.m in Sources */,
+				7FFC43F81E76302000BED0ED /* AppDelegate.m in Sources */,
+				7FFC43F51E76302000BED0ED /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +273,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FFC43DC1E762F8B00BED0ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7FFC43FC1E76302000BED0ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FFC43FD1E76302000BED0ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FFC44011E76302000BED0ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FFC44021E76302000BED0ED /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -283,6 +415,30 @@
 			};
 			name = Release;
 		};
+		7FFC44061E76302000BED0ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q6CGREU86U;
+				INFOPLIST_FILE = "YLPageScrollView_Objective-C/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "YL.YLPageScrollView-Objective-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7FFC44071E76302000BED0ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q6CGREU86U;
+				INFOPLIST_FILE = "YLPageScrollView_Objective-C/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "YL.YLPageScrollView-Objective-C";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -300,6 +456,14 @@
 			buildConfigurations = (
 				7FFC43E21E762F8B00BED0ED /* Debug */,
 				7FFC43E31E762F8B00BED0ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FFC44051E76302000BED0ED /* Build configuration list for PBXNativeTarget "YLPageScrollView_Objective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FFC44061E76302000BED0ED /* Debug */,
+				7FFC44071E76302000BED0ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
