@@ -63,15 +63,20 @@ static NSString * const cellId = @"UICollectionViewCell";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-    
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    
+    [self scrollViewDidEndScroll];
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    
+    [self scrollViewDidEndScroll];
+}
+- (void)scrollViewDidEndScroll
+{
+    if ([self.delegate_ respondsToSelector:@selector(contentViewDidEndScroll:index:)]) {
+        [self.delegate_ contentViewDidEndScroll:self index:self.collectionView.contentOffset.x / self.frame.size.width];
+    }
 }
 
 #pragma mark - YLPageScrollTitleViewDelegate

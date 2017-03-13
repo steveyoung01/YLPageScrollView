@@ -71,9 +71,30 @@
 }
 
 #pragma mark - YLPageScrollContentViewDelegate
-- (void)pageScrollContentView:(YLPageScrollContentView *)contentView selectedIndex:(NSInteger)selectedIndex
+- (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSInteger)index
 {
-    NSLog(@"%ld", selectedIndex);
+    UILabel *lastLabel = self.titleLabels[self.selectedIndex];
+    lastLabel.textColor = self.appreance.titleNormalColor;
+    self.titleLabels[index].textColor = self.appreance.titleSelectedColor;
+    self.selectedIndex = index;
+    [self updateSelectedLabelPosition];
+}
+- (void)contentView:(YLPageScrollContentView *)contentView fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+{
+    
+}
+- (void)updateSelectedLabelPosition
+{
+    UILabel *selectedLabel = self.titleLabels[self.selectedIndex];
+    CGFloat offsetX = selectedLabel.center.x - self.frame.size.width * 0.5;
+    if (offsetX <= 0) {
+        offsetX = 0;
+    }
+    CGFloat maxOffsetX = self.contentSize.width - self.frame.size.width;
+    if (offsetX > maxOffsetX) {
+        offsetX = maxOffsetX;
+    }
+    [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
 #pragma mark - 监听titleLabel的点击
@@ -86,15 +107,7 @@
     
     self.selectedIndex = selectedLabel.tag;
     
-    CGFloat offsetX = selectedLabel.center.x - self.frame.size.width * 0.5;
-    if (offsetX <= 0) {
-        offsetX = 0;
-    }
-    CGFloat maxOffsetX = self.contentSize.width - self.frame.size.width;
-    if (offsetX > maxOffsetX) {
-        offsetX = maxOffsetX;
-    }
-    [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    [self updateSelectedLabelPosition];
     
     if ([self.delegate_ respondsToSelector:@selector(pageScrollTitleViewDidSelected:selectedIndex:)]) {
         [self.delegate_ pageScrollTitleViewDidSelected:self selectedIndex:self.selectedIndex];
