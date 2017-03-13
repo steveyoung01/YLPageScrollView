@@ -26,7 +26,6 @@
 		7FFC44171E76319400BED0ED /* YLPageScrollTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44161E76319400BED0ED /* YLPageScrollTitleView.m */; };
 		7FFC441A1E7631A900BED0ED /* YLPageScrollContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */; };
 		7FFC441D1E7631C600BED0ED /* YLPageScrollViewAppreance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */; };
-		7FFC44201E76382300BED0ED /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC441F1E76382300BED0ED /* UIColor+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +58,6 @@
 		7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollContentView.m; sourceTree = "<group>"; };
 		7FFC441B1E7631C600BED0ED /* YLPageScrollViewAppreance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLPageScrollViewAppreance.h; sourceTree = "<group>"; };
 		7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLPageScrollViewAppreance.m; sourceTree = "<group>"; };
-		7FFC441E1E76382300BED0ED /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
-		7FFC441F1E76382300BED0ED /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		7FFC44211E7639AD00BED0ED /* YLPageScrollViewConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPageScrollViewConfigure.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,9 +139,9 @@
 		7FFC44081E76304D00BED0ED /* YLPageScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				7FFC44091E76304D00BED0ED /* YLPageScrollContentView.swift */,
-				7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */,
 				7FFC440B1E76304D00BED0ED /* YLPageScrollView.swift */,
+				7FFC440A1E76304D00BED0ED /* YLPageScrollTitleView.swift */,
+				7FFC44091E76304D00BED0ED /* YLPageScrollContentView.swift */,
 				7FFC440C1E76304D00BED0ED /* YLPageScrollViewAppreance.swift */,
 			);
 			path = YLPageScrollView;
@@ -161,8 +158,6 @@
 				7FFC44191E7631A900BED0ED /* YLPageScrollContentView.m */,
 				7FFC441B1E7631C600BED0ED /* YLPageScrollViewAppreance.h */,
 				7FFC441C1E7631C600BED0ED /* YLPageScrollViewAppreance.m */,
-				7FFC441E1E76382300BED0ED /* UIColor+Extension.h */,
-				7FFC441F1E76382300BED0ED /* UIColor+Extension.m */,
 				7FFC44211E7639AD00BED0ED /* YLPageScrollViewConfigure.h */,
 			);
 			path = YLPageScrollView;
@@ -290,7 +285,6 @@
 				7FFC43FB1E76302000BED0ED /* ViewController.m in Sources */,
 				7FFC44141E76316D00BED0ED /* YLPageScrollView.m in Sources */,
 				7FFC43F81E76302000BED0ED /* AppDelegate.m in Sources */,
-				7FFC44201E76382300BED0ED /* UIColor+Extension.m in Sources */,
 				7FFC43F51E76302000BED0ED /* main.m in Sources */,
 				7FFC44171E76319400BED0ED /* YLPageScrollTitleView.m in Sources */,
 				7FFC441A1E7631A900BED0ED /* YLPageScrollContentView.m in Sources */,

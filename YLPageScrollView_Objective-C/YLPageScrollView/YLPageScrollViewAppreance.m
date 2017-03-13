@@ -28,11 +28,11 @@
     self.botomLineHeight = 3;
     self.maxScaleRatio = 1.2;
     
-    self.titleNormalColor = YLPageScrollViewRGB(200, 200, 200);
-    self.titleSelectedColor = YLPageScrollViewRGB(50, 50, 50);
+    self.titleNormalColor = [UIColor lightGrayColor];
+    self.titleSelectedColor = [UIColor darkGrayColor];
     self.bottomLineColor = self.titleSelectedColor;
     
-    self.isScrollEnable = NO;
+    self.isScrollEnable = YES;
     self.isShowBottomLine = YES;
     self.isNeedScale = YES;
 }

@@ -13,6 +13,6 @@
 
 @interface YLPageScrollTitleView : UIScrollView
 
-+ (instancetype)pageScrollTitleViewWithFrame:(CGRect)frame titles:(NSArray *)titles appreance:(YLPageScrollViewAppreance *)appreance;
++ (instancetype)pageScrollTitleViewWithFrame:(CGRect)frame titles:(NSArray<NSString *> *)titles appreance:(YLPageScrollViewAppreance *)appreance;
 
 @end
