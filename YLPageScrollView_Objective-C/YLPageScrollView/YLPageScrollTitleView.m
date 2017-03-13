@@ -9,8 +9,9 @@
 #import "YLPageScrollTitleView.h"
 #import "YLPageScrollViewConfigure.h"
 #import "YLPageScrollViewAppreance.h"
+#import "YLPageScrollContentView.h"
 
-@interface YLPageScrollTitleView ()
+@interface YLPageScrollTitleView () <YLPageScrollContentViewDelegate>
 @property (nonatomic, strong) NSArray<NSString *> *titles;
 @property (nonatomic, strong) NSMutableArray<UILabel *> *titleLabels;
 @property (nonatomic, strong) YLPageScrollViewAppreance *appreance;
@@ -67,6 +68,12 @@
         }
     }
     return self;
+}
+
+#pragma mark - YLPageScrollContentViewDelegate
+- (void)pageScrollContentView:(YLPageScrollContentView *)contentView selectedIndex:(NSInteger)selectedIndex
+{
+    NSLog(@"%ld", selectedIndex);
 }
 
 #pragma mark - 监听titleLabel的点击

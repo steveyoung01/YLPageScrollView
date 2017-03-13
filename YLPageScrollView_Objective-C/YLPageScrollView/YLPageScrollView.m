@@ -41,6 +41,8 @@
         self.contentView = contentView;
         [self addSubview:contentView];
         
+        titleView.delegate_ = contentView;
+        contentView.delegate_ = titleView;
     }
     return self;
 }

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
 @class YLPageScrollTitleView;
 @class YLPageScrollViewAppreance;
+@protocol YLPageScrollContentViewDelegate;
+
 
 @protocol YLPageScrollTitleViewDelegate <NSObject>
 
