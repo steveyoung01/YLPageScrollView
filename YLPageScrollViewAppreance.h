@@ -27,14 +27,8 @@
 @property (nonatomic, strong) UIColor *titleViewColor;
 /// 标题文字普通颜色
 @property (nonatomic, strong) UIColor *titleNormalColor;
-/// 标题文字普通颜色的组合值
-@property (nonatomic, strong) NSArray *normalColors;
 /// 标题文字选中颜色
 @property (nonatomic, strong) UIColor *titleSelectedColor;
-/// 标题文字选中颜色的组合值
-@property (nonatomic, strong) NSArray *selectedColors;
-
-@property (nonatomic, strong) NSArray *deltaColors;
 
 /// 标题底部线的颜色, 默认: titleSelectedColor
 @property (nonatomic, strong) UIColor *bottomLineColor;

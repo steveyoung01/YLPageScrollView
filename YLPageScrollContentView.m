@@ -18,7 +18,6 @@
 @property (nonatomic, strong) YLPageScrollViewAppreance *appreance;
 @property (nonatomic, assign) CGFloat startOffsetX;
 @property (nonatomic, assign) BOOL isForbidDelegate;
-//@property (nonatomic, assign) BOOL isEndDecelerate;
 @property (nonatomic, assign) NSUInteger indexWhenScrollToLeft;
 
 @end
@@ -85,8 +84,6 @@ static NSString * const cellId = @"UICollectionViewCell";
         if (sourceIndex - self.indexWhenScrollToLeft == 1) {
             targetIndex = sourceIndex;
         }
-//        NSLog(@"%f, %f", contentOffsetX, self.startOffsetX);
-        NSLog(@"%lu, %lu", sourceIndex, targetIndex);
     } else { // 向右滑动
         
         targetIndex = contentOffsetX / scrollViewWidth;
@@ -94,8 +91,6 @@ static NSString * const cellId = @"UICollectionViewCell";
         if (self.startOffsetX - contentOffsetX == scrollViewWidth) {
             sourceIndex = targetIndex;
         }
-        NSLog(@"%lu, %lu", sourceIndex, targetIndex);
-        NSLog(@"%f, %f", contentOffsetX, self.startOffsetX);
     }
     progress = ABS(contentOffsetX-self.startOffsetX) / scrollViewWidth;
     if (!self.isForbidDelegate && [self.delegate_ respondsToSelector:@selector(contentView:fromIndex:toIndex:progress:)]) {
@@ -111,16 +106,10 @@ static NSString * const cellId = @"UICollectionViewCell";
 {
     [self scrollViewDidEndScroll];
 }
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
-{
-    NSLog(@"%s", __func__);
-}
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (!decelerate) {
         [self scrollViewDidEndScroll];
-    } else {
-        
     }
 }
 - (void)scrollViewDidEndScroll
