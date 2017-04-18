@@ -74,8 +74,9 @@
 #pragma mark - YLPageScrollContentViewDelegate
 - (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSUInteger)index
 {
-    UILabel *lastLabel = self.titleLabels[self.selectedIndex];
-    lastLabel.textColor = self.appreance.titleNormalColor;
+    [self.titleLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.textColor = self.appreance.titleNormalColor;
+    }];
     self.titleLabels[index].textColor = self.appreance.titleSelectedColor;
     self.selectedIndex = index;
     [self updateSelectedLabelPosition];
