@@ -7,19 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YLPageScrollTitleView.h"
+#import "YLPageScrollViewConfigure.h"
+
 
 @class YLPageScrollViewAppreance;
-@class YLPageScrollContentView;
-@protocol YLPageScrollTitleViewDelegate;
-
-
-@protocol YLPageScrollContentViewDelegate <NSObject>
-
-- (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSInteger)index;
-- (void)contentView:(YLPageScrollContentView *)contentView fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
-
-@end
+@protocol YLPageScrollContentViewDelegate;
 
 @interface YLPageScrollContentView : UIView <YLPageScrollTitleViewDelegate>
 

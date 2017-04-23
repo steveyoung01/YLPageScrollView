@@ -7,14 +7,14 @@
 //
 
 #import "YLPageScrollTitleView.h"
-#import "YLPageScrollViewConfigure.h"
 #import "YLPageScrollViewAppreance.h"
 #import "YLPageScrollContentView.h"
 
-@interface YLPageScrollTitleView () <YLPageScrollContentViewDelegate>
+@interface YLPageScrollTitleView () 
 @property (nonatomic, strong) NSArray<NSString *> *titles;
 @property (nonatomic, strong) NSMutableArray<UILabel *> *titleLabels;
 @property (nonatomic, strong) YLPageScrollViewAppreance *appreance;
+@property (nonatomic, strong) UIView *bottomLine;
 
 @property (nonatomic, assign) NSInteger selectedIndex;
 @end
@@ -29,10 +29,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray<NSString *> *)titles appreance:(YLPageScrollViewAppreance *)appreance
 {
-    
     if (self = [super initWithFrame:frame]) {
         
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = self.appreance.titleViewColor;
         self.showsHorizontalScrollIndicator = NO;
         self.appreance = appreance;
         self.titles = titles;
@@ -57,7 +56,7 @@
             CGFloat H = appreance.titleViewHeight;
             if (appreance.isScrollEnable) {
                 W = [titles[i] boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : appreance.titleFont} context:nil].size.width;
-                X = i==0?appreance.titleOffset : appreance.titleOffset+CGRectGetMaxX(_titleLabels[i-1].frame);
+                X = i==0?appreance.titleOffset : appreance.titleMargin+CGRectGetMaxX(_titleLabels[i-1].frame);
             } else {
                 W = YLPageScrollViewSW / titles.count;
                 X = W * i;
@@ -66,22 +65,51 @@
             
             self.contentSize = CGSizeMake(CGRectGetMaxX([self.titleLabels lastObject].frame) + appreance.titleOffset, appreance.titleViewHeight);
         }
+        
+        [self addSubview:self.bottomLine];
     }
     return self;
 }
 
 #pragma mark - YLPageScrollContentViewDelegate
-- (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSInteger)index
+- (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSUInteger)index
 {
-    UILabel *lastLabel = self.titleLabels[self.selectedIndex];
-    lastLabel.textColor = self.appreance.titleNormalColor;
+    [self.titleLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.textColor = self.appreance.titleNormalColor;
+    }];
     self.titleLabels[index].textColor = self.appreance.titleSelectedColor;
     self.selectedIndex = index;
     [self updateSelectedLabelPosition];
 }
-- (void)contentView:(YLPageScrollContentView *)contentView fromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+- (void)contentView:(YLPageScrollContentView *)contentView fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex progress:(CGFloat)progress
 {
+    UILabel *sourceLabel = self.titleLabels[fromIndex];
+    UILabel *targetLabel = self.titleLabels[toIndex];
+ 
+    CGFloat normalRed = 0;
+    CGFloat normalGreen = 0;
+    CGFloat normalBlue = 0;
+    [self.appreance.titleNormalColor getRed:&normalRed green:&normalGreen blue:&normalBlue alpha:nil];
+    CGFloat selectRed = 0;
+    CGFloat selectGreen = 0;
+    CGFloat selectBlue = 0;
+    [self.appreance.titleSelectedColor getRed:&selectRed green:&selectGreen blue:&selectBlue alpha:nil];
+    sourceLabel.textColor = [UIColor colorWithRed:selectRed - progress*(selectRed-normalRed) green:selectGreen - progress*(selectGreen-normalGreen) blue:selectBlue - progress*(selectBlue-normalBlue) alpha:1.0];
+    targetLabel.textColor = [UIColor colorWithRed:normalRed + progress*(selectRed-normalRed) green:normalGreen + progress*(selectGreen-normalGreen) blue:normalBlue + progress*(selectBlue-normalBlue) alpha:1.0];
     
+    // 缩放的变化
+    if (self.appreance.isNeedScale) {
+        CGFloat deltaScale = self.appreance.maxScaleRatio - 1.0;
+        sourceLabel.transform = CGAffineTransformMakeScale(self.appreance.maxScaleRatio - deltaScale * progress, self.appreance.maxScaleRatio - deltaScale * progress);
+        targetLabel.transform = CGAffineTransformMakeScale(1 + deltaScale * progress, 1 + deltaScale * progress);
+    }
+    
+    // 计算bottomLine的width/x变化
+    CGFloat deltaWidth = CGRectGetWidth(targetLabel.frame) - CGRectGetWidth(sourceLabel.frame);
+    CGFloat deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x;
+    if (self.appreance.isShowBottomLine) {
+        self.bottomLine.frame = CGRectMake(CGRectGetMinX(sourceLabel.frame) + progress*deltaX, self.bottomLine.frame.origin.y, deltaWidth*progress + sourceLabel.frame.size.width, self.appreance.titleViewHeight);
+    }
 }
 - (void)updateSelectedLabelPosition
 {
@@ -95,6 +123,13 @@
         offsetX = maxOffsetX;
     }
     [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
+    if (self.appreance.isShowBottomLine) {
+        CGFloat labelW = [selectedLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.appreance.titleFont.capHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.appreance.titleFont} context:nil].size.width;
+        [UIView animateWithDuration:0.2 animations:^{
+            self.bottomLine.frame = CGRectMake(CGRectGetMinX(selectedLabel.frame), CGRectGetMaxY(self.frame) - self.appreance.botomLineHeight, labelW, self.appreance.botomLineHeight);
+        }];
+    }
 }
 
 #pragma mark - 监听titleLabel的点击
@@ -121,5 +156,14 @@
         _titleLabels = [NSMutableArray array];
     }
     return _titleLabels;
+}
+- (UIView *)bottomLine {
+    if (!_bottomLine) {
+        UILabel *firstLabel = self.titleLabels[0];
+        CGFloat labelW = [firstLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.appreance.titleFont.capHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : self.appreance.titleFont} context:nil].size.width;
+        _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(firstLabel.frame), CGRectGetMaxY(self.frame) - self.appreance.botomLineHeight, labelW, self.appreance.botomLineHeight)];
+        _bottomLine.backgroundColor = self.appreance.bottomLineColor;
+    }
+    return _bottomLine;
 }
 @end

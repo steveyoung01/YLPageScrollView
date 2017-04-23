@@ -7,19 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YLPageScrollViewConfigure.h"
 
-@class YLPageScrollTitleView;
+
 @class YLPageScrollViewAppreance;
-@protocol YLPageScrollContentViewDelegate;
 
-
-@protocol YLPageScrollTitleViewDelegate <NSObject>
-
-- (void)pageScrollTitleViewDidSelected:(YLPageScrollTitleView *)titleView selectedIndex:(NSInteger)selectedIndex;
-
-@end
-
-@interface YLPageScrollTitleView : UIScrollView
+@interface YLPageScrollTitleView : UIScrollView <YLPageScrollContentViewDelegate>
 
 /**
  防止和系统的delegate重名

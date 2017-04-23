@@ -7,16 +7,18 @@
 //
 
 #import "YLPageScrollContentView.h"
-#import "YLPageScrollViewConfigure.h"
 #import "YLPageScrollTitleView.h"
 
-@interface YLPageScrollContentView () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface YLPageScrollContentView () <YLPageScrollTitleViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @property (nonatomic, strong) NSArray<UIViewController *> *childVCs;
 @property (nonatomic, strong) UIViewController *parentVC;
 @property (nonatomic, strong) YLPageScrollViewAppreance *appreance;
+@property (nonatomic, assign) CGFloat startOffsetX;
+@property (nonatomic, assign) BOOL isForbidDelegate;
+@property (nonatomic, assign) NSUInteger indexWhenScrollToLeft;
 
 @end
 
@@ -34,6 +36,9 @@ static NSString * const cellId = @"UICollectionViewCell";
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = YLPageScrollViewRandomColor;
+        self.isForbidDelegate = NO;
+        self.indexWhenScrollToLeft = 0;
+        
         self.childVCs = childVCs;
         self.appreance = appreance;
         self.parentVC = parentVC;
@@ -62,7 +67,40 @@ static NSString * const cellId = @"UICollectionViewCell";
 #pragma mark - UICollectionViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    if (contentOffsetX == self.startOffsetX || self.isForbidDelegate) {
+        return;
+    }
+    NSUInteger sourceIndex = 0;
+    NSUInteger targetIndex = 0;
+    CGFloat progress = 0;
+    CGFloat scrollViewWidth = scrollView.bounds.size.width;
+    if (contentOffsetX > self.startOffsetX) { // 向左滑动
+        sourceIndex = (contentOffsetX) / scrollViewWidth;
+        targetIndex = sourceIndex + 1;
+        if (targetIndex > self.childVCs.count - 1) {
+            targetIndex = self.childVCs.count - 1;
+        }
+        if (sourceIndex - self.indexWhenScrollToLeft == 1) {
+            targetIndex = sourceIndex;
+        }
+    } else { // 向右滑动
+        
+        targetIndex = contentOffsetX / scrollViewWidth;
+        sourceIndex = targetIndex + 1;
+        if (self.startOffsetX - contentOffsetX == scrollViewWidth) {
+            sourceIndex = targetIndex;
+        }
+    }
+    progress = ABS(contentOffsetX-self.startOffsetX) / scrollViewWidth;
+    if (!self.isForbidDelegate && [self.delegate_ respondsToSelector:@selector(contentView:fromIndex:toIndex:progress:)]) {
+        [self.delegate_ contentView:self fromIndex:sourceIndex toIndex:targetIndex progress:progress];
+    }
+    self.indexWhenScrollToLeft = sourceIndex;
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.isForbidDelegate = NO;
+    self.startOffsetX = scrollView.contentOffset.x;
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -70,18 +108,22 @@ static NSString * const cellId = @"UICollectionViewCell";
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    [self scrollViewDidEndScroll];
+    if (!decelerate) {
+        [self scrollViewDidEndScroll];
+    }
 }
 - (void)scrollViewDidEndScroll
 {
     if ([self.delegate_ respondsToSelector:@selector(contentViewDidEndScroll:index:)]) {
-        [self.delegate_ contentViewDidEndScroll:self index:self.collectionView.contentOffset.x / self.frame.size.width];
+        NSUInteger index = self.collectionView.contentOffset.x / self.frame.size.width;
+        [self.delegate_ contentViewDidEndScroll:self index:index];
     }
 }
 
 #pragma mark - YLPageScrollTitleViewDelegate
 - (void)pageScrollTitleViewDidSelected:(YLPageScrollTitleView *)titleView selectedIndex:(NSInteger)selectedIndex
 {
+    self.isForbidDelegate = YES;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:kNilOptions animated:NO];
 }

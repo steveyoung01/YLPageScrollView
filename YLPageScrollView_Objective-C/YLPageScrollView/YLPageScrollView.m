@@ -8,13 +8,11 @@
 
 #import "YLPageScrollView.h"
 #import "YLPageScrollViewAppreance.h"
-#import "YLPageScrollTitleView.h"
-#import "YLPageScrollContentView.h"
 
 @interface YLPageScrollView ()
 
-@property (nonatomic, weak) YLPageScrollTitleView *titleView;
-@property (nonatomic, weak) YLPageScrollContentView *contentView;
+@property (nonatomic, weak, readwrite) YLPageScrollTitleView *titleView;
+@property (nonatomic, weak, readwrite) YLPageScrollContentView *contentView;
 
 @property (nonatomic, strong) NSArray *childVCs;
 @property (nonatomic, strong) UIViewController *parentVC;
@@ -25,11 +23,13 @@
 
 @implementation YLPageScrollView
 
-+ (instancetype)pageScrollView:(CGRect)frame titles:(NSArray *)titles childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC appreance:(YLPageScrollViewAppreance *)appreance {
++ (instancetype)pageScrollView:(CGRect)frame titles:(NSArray *)titles childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC appreance:(YLPageScrollViewAppreance *)appreance
+{
     return [[self alloc] initWithFrame:frame titles:titles childVCs:childVCs parentVC:parentVC appreance:appreance];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC appreance:(YLPageScrollViewAppreance *)appreance {
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC appreance:(YLPageScrollViewAppreance *)appreance
+{
     if (self = [super initWithFrame:frame]) {
         
         YLPageScrollTitleView *titleView = [YLPageScrollTitleView pageScrollTitleViewWithFrame:CGRectMake(0, 0, frame.size.width, appreance.titleViewHeight) titles:titles appreance:appreance];

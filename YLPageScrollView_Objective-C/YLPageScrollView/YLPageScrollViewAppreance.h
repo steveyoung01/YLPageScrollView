@@ -23,11 +23,14 @@
 /// 文字缩放系数
 @property (nonatomic, assign) CGFloat maxScaleRatio;
 
+/// 标题背景颜色
+@property (nonatomic, strong) UIColor *titleViewColor;
 /// 标题文字普通颜色
 @property (nonatomic, strong) UIColor *titleNormalColor;
 /// 标题文字选中颜色
 @property (nonatomic, strong) UIColor *titleSelectedColor;
-/// 标题底部线的颜色, 默认=titleNormalColor
+
+/// 标题底部线的颜色, 默认: titleSelectedColor
 @property (nonatomic, strong) UIColor *bottomLineColor;
 
 /// 是否允许标题栏滚动

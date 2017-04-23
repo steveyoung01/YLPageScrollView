@@ -26,14 +26,15 @@
     self.titleOffset = 8;
     self.titleMargin = 20;
     self.botomLineHeight = 3;
-    self.maxScaleRatio = 1.2;
+    self.maxScaleRatio = 1.15;
     
-    self.titleNormalColor = [UIColor lightGrayColor];
-    self.titleSelectedColor = [UIColor darkGrayColor];
+    self.titleViewColor = [UIColor whiteColor];
+    self.titleNormalColor = [UIColor orangeColor];
+    self.titleSelectedColor = [UIColor purpleColor];
     self.bottomLineColor = self.titleSelectedColor;
     
     self.isScrollEnable = YES;
     self.isShowBottomLine = YES;
-    self.isNeedScale = YES;
+    self.isNeedScale = NO;
 }
 @end

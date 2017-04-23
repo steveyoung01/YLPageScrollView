@@ -26,4 +26,18 @@
         YLPageScrollViewRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 
+@class YLPageScrollTitleView;
+@class YLPageScrollContentView;
+
+@protocol YLPageScrollTitleViewDelegate <NSObject>
+- (void)pageScrollTitleViewDidSelected:(YLPageScrollTitleView *)titleView selectedIndex:(NSInteger)selectedIndex;
+@end
+
+
+@protocol YLPageScrollContentViewDelegate <NSObject>
+- (void)contentViewDidEndScroll:(YLPageScrollContentView *)contentView index:(NSUInteger)index;
+- (void)contentView:(YLPageScrollContentView *)contentView fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex progress:(CGFloat)progress;
+@end
+
+
 #endif /* YLPageScrollViewConfigure_h */
