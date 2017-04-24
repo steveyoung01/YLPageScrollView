@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         
         /// 设置数据源
         //        let titles = ["推荐", "移动互联网", "科技", "数码"]
+        //        let titles = ["推荐", "移动互联网", "科技", "数码"]
         let titles = ["推荐", "移动互联网", "人民日报社", " iOS", "Java", "百代旅行事业部", "国家人文历史"]
         var childVCs = [UIViewController]()
         for _ in 0..<titles.count {
